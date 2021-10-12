@@ -10,8 +10,7 @@ import Foundation
 import Dispatch
 import Bluetooth
 import BluetoothGATT
-
-@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+//@available(macOS 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
 public final class GATTClientConnection <L2CAPSocket: L2CAPSocketProtocol> {
     
     // MARK: - Properties

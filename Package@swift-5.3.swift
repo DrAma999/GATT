@@ -3,12 +3,21 @@ import PackageDescription
 
 #if os(Linux)
 let libraryType: PackageDescription.Product.Library.LibraryType = .dynamic
+let supportedPlatforms: [SupportedPlatform]? = nil
 #else
 let libraryType: PackageDescription.Product.Library.LibraryType = .static
+let supportedPlatforms: [SupportedPlatform]? = [
+    // Add support for all platforms starting from a specific version.
+    .macOS(.v10_12),
+    .iOS(.v10),
+    .watchOS(.v3),
+    .tvOS(.v10)
+]
 #endif
 
 let package = Package(
     name: "GATT",
+    platforms: supportedPlatforms,
     products: [
         .library(
             name: "GATT",
